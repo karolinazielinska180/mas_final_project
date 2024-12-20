@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Klient</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Klient </h1>
+<table>
+    <tr>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Data Urodzenia</th>
+        <th>Pesel</th>
+        <th>Dodatkowe informacje</th>
+    </tr>
+        <td th:text="${klient.imie}"></td>
+        <td th:text="${klient.nazwisko}"></td>
+        <td th:text="${klient.dataUrodzenia}"></td>
+        <td th:text="${klient.pesel}"></td>
+        <td th:text="${klient.dodatkoweInformacje}"></td>
+    <td>
+            <a th:href="@{'/klienci/{id}/pobyty'(id=${klient.id})}">
+
+
+            <button>Pobyty</button>
+        </a>
+    </td>
+    </tr>
+</table>
+</body>
+</html>

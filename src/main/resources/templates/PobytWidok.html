@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pobyt</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1>Pobyt</h1>
+<table>
+    <tr>
+        <th>Data rozpoczecia</th>
+        <th>Data zakonczenia</th>
+        <th>Ilosc dni pobytu</th>
+    </tr>
+    <td th:text="${pobyt.dataRozpoczecia}"></td>
+    <td th:text="${pobyt.dataZakonczenia}"></td>
+    <td th:text="${pobyt.iloscDniPobytu}"></td>
+    <td>
+        <a th:href="@{'/klienci/{id}/pobyty/edytuj/{idPobytu}/'(id=${klient.id},idPobytu=${pobyt.id})}">
+
+            <button>Edytuj</button>
+        </a>
+    </td>
+
+    </tr>
+</table>
+</body>
+</html>

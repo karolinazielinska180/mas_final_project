@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja</title>
+    <link rel="stylesheet" href="/edycja.css">
+</head>
+<body>
+<h1>Edycja pobytu</h1>
+
+<form method="post">
+    <input type="hidden" name="idPobytu" th:value="${pobyt.id}">
+    <input type="hidden" name="id" th:value="${klient.id}">
+
+    <table>
+        <tr>
+            <th>Data rozpoczęcia</th>
+            <th>Data zakończenia</th>
+            <h2>Informacje o wybranym pobycie</h2>
+            <p>ID Pobytu: <span th:text="${pobyt.id}"></span></p>
+            <p>Data rozpoczęcia: <span th:text="${#dates.format(pobyt.dataRozpoczecia, 'yyyy-MM-dd')}"></span></p>
+            <p>Data zakończenia: <span th:text="${#dates.format(pobyt.dataZakonczenia, 'yyyy-MM-dd')}"></span></p>
+        </tr>
+        <tr>
+            <td>
+                <input type="date" th:field="*{pobyt.dataRozpoczecia}"/>
+            </td>
+            <td>
+                <input type="date" th:field="*{pobyt.dataZakonczenia}"/>
+            </td>
+            <button type="submit">Zapisz</button>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{'/'}">
+        <button class="anuluj">Anuluj</button>
+    </a>
+</form>
+</body>
+</html>
